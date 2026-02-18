@@ -1,0 +1,255 @@
+/* ============================================
+   F1 Racing Simulator - Stylesheet
+   Course: Computer Graphics
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: #000;
+    font-family: 'Courier New', monospace;
+}
+
+canvas {
+    display: block;
+}
+
+/* Controls Overlay */
+#controls-overlay {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    max-width: 280px;
+    z-index: 100;
+    border: 1px solid #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+#controls-overlay h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #ff0000;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+#controls-overlay p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+#controls-overlay strong {
+    color: #ffcc00;
+}
+
+#controls-overlay hr {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 15px 0;
+}
+
+#speed-display {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+#camera-display {
+    color: #00ccff;
+    font-weight: bold;
+}
+
+#time-display {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* Loading Overlay */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading-content {
+    text-align: center;
+    color: white;
+}
+
+.loading-content p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ccc;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid #333;
+    border-top-color: #ff0000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Error Overlay */
+#error-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.error-content {
+    text-align: center;
+    color: white;
+    background: #8b0000;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 500px;
+}
+
+.error-content h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.error-content p {
+    margin: 10px 0;
+    color: #ffcccc;
+}
+
+/* Crash Overlay */
+#crash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(139, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002;
+}
+
+.crash-content {
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+
+.crash-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px #ff0000;
+}
+
+.crash-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.crash-content button {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-family: 'Courier New', monospace;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.crash-content button:hover {
+    background: #ff6666;
+}
+
+/* Lap Complete Overlay */
+#lap-complete-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 100, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+    pointer-events: none;
+}
+
+.lap-complete-content {
+    text-align: center;
+    color: white;
+    padding: 40px;
+    animation: popIn 0.3s ease-out;
+}
+
+.lap-complete-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px #00ff00;
+}
+
+.lap-complete-content p {
+    font-size: 24px;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#best-time-display {
+    color: #ff00ff;
+    font-weight: bold;
+}
+
+#lap-time-display {
+    color: #ffff00;
+    font-weight: bold;
+}
+
+#weather-display {
+    color: #00aaff;
+    font-weight: bold;
+}

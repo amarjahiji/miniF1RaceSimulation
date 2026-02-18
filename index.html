@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Racing Simulator - Three.js Project</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="controls-overlay">
+        <h3>F1 Racing Simulator</h3>
+        <p><strong>Controls:</strong></p>
+        <p>W/S: Accelerate/Brake</p>
+        <p>A/D: Steer Left/Right</p>
+        <p>C: Toggle Camera (Chase/First-Person)</p>
+        <p>L: Toggle Weather (Rain)</p>
+        <p>V: Pause/Free View (Orbit Controls)</p>
+        <hr>
+        <p>Speed: <span id="speed-display">0</span> km/h</p>
+        <p>Camera: <span id="camera-display">Chase</span></p>
+        <p>Weather: <span id="weather-display">Clear</span></p>
+        <hr>
+        <p>Lap Time: <span id="lap-time-display">0.00</span>s</p>
+        <p>Best Lap: <span id="best-time-display">--</span>s</p>
+    </div>
+
+    <div id="crash-overlay" style="display: none;">
+        <div class="crash-content">
+            <h2>CRASHED!</h2>
+            <button onclick="restartGame()">RESTART</button>
+        </div>
+    </div>
+
+    <div id="lap-complete-overlay" style="display: none;">
+        <div class="lap-complete-content">
+            <h2>LAP COMPLETE!</h2>
+            <p>Time: <span id="completed-lap-time">0.00</span>s</p>
+        </div>
+    </div>
+
+    <div id="error-overlay" style="display: none;">
+        <div class="error-content">
+            <h2>ERROR: Car Model Failed to Load</h2>
+            <p>All car model URLs failed. Please check console for details.</p>
+            <p>This project requires an imported 3D car model.</p>
+        </div>
+    </div>
+
+    <!-- Three.js and GLTFLoader from CDN -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
